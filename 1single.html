@@ -15,7 +15,7 @@ layout: page
     const json = await response.json();
     const label = json['data'][0]['confidences'][0]['label'];
     const prob  =  json['data'][0]['confidences'][0]['confidence'];
-    rsu = Number(prob.toFixed(2));
+    rsu = Number(prob.toFixed(2)) * 100;
     results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p><p>${rsu}%</p>`
   }
   function read() {
